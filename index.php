@@ -24,11 +24,20 @@ if(isset($_POST['submit']))
 	if(count($err)==0)
 	{
 	echo "REGIstered succesfully";
-	echo "$name";
-	echo "$email";
+	echo "$name<br>";
+	echo "$pass<br>";
 
-	$query="INSERT INTO reg('name','email','password') VALUES('$name','$email','$pass')";
-	
+	include 'conn.php';
+	$query="INSERT INTO register(name,email,pass) VALUES('$name','$email','$pass')";
+	$res=mysqli_query($conn,$query);
+
+	if($res)
+	{
+		echo "REGISTERED succesfully";
+	}
+	else{
+		echo "ERROR" . mysqli_error($conn);
+	}
 
 
 
@@ -74,7 +83,7 @@ if(!isset($_POST['submit']) || count($err) > 0)
 
 <?php
 }
-else{
-	header('location:login.php');
-}
+// else{
+// 	header('location:login.php');
+// }
 ?>
