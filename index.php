@@ -5,8 +5,8 @@ if(isset($_POST['submit']))
 {
 	$name=$_POST['name'];
 	$email=$_POST['email'];
-	$pass=$_POST['password'];
-	if(strlen($pass) <8 || empty($pass))
+	$password=$_POST['password'];
+	if(strlen($password) <8 || empty($password))
 	{
 			array_push($err,"password");
 
@@ -23,25 +23,24 @@ if(isset($_POST['submit']))
 
 	if(count($err)==0)
 	{
-	echo "REGIstered succesfully";
-	echo "$name<br>";
-	echo "$pass<br>";
+		echo "REGIstered succesfully";
+		echo "$name<br>";
+		echo "$password<br>";
 
-	include 'conn.php';
-	$query="INSERT INTO register(name,email,pass) VALUES('$name','$email','$pass')";
-	$res=mysqli_query($conn,$query);
+		include 'conn.php';
+		$query="INSERT INTO register (name,email,pass) VALUES ('$name','$email','$password')";
+		$res=mysqli_query($conn,$query);
 
-	if($res)
-	{
-		echo "REGISTERED succesfully";
-	}
-	else{
-		echo "ERROR" . mysqli_error($conn);
-	}
+		if($res)
+		{
+			echo "REGISTERED succesfully";
+			header('location:login.php');
+		}
+		else{
+			echo "ERROR" . mysqli_error($conn);
+		}
 
-
-
-	}
+		}
 	// var_dump($err);
 	// var_dump($_POST);
 } 
@@ -58,6 +57,7 @@ if(!isset($_POST['submit']) || count($err) > 0)
 	<title>LOGIN</title>
 </head>
 <body>
+	<h1>REGISTER</h1>
 	<form action="index.php" method="post">
 		
 		<label >Name</label>	
