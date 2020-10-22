@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 	echo "$password";	
 	if(count($err)==0)
 	{
-		$logQuery= "SELECT pass from register where email='$email'";
+		$logQuery= "SELECT * from register where email='$email'";
 		echo "$logQuery";
 		$ros=mysqli_query($conn,$logQuery);
 		$row=mysqli_fetch_assoc($ros);
@@ -28,6 +28,7 @@ if(isset($_POST['submit']))
 			echo "Successfully logged in";
 			session_start();
 			$_SESSION['email']=$email;
+			$_SESSION['id']=$row['id'];
 			header('location:orders.php');
 			
 		}

@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 	$password=$_POST['password'];
 	if(strlen($password) <8 || empty($password))
 	{
-			array_push($err,"password");
+		array_push($err,"password");
 
 	}
 	if(empty($email))
