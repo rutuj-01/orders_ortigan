@@ -77,8 +77,12 @@ if(isset($_SESSION['email']))
 						<td><?php	echo $row['quantity']; ?></td>
 						<td><?php	echo $row['payment_mode']; ?></td>
 						<td><?php	echo $row['order_status']; ?></td>
+
+						<td><a href="update.php?order_id=<?php   echo $row['order_id']; ?>"><button>Update</button>></a></td>
+						<td><a href="delete.php?order_id = <?php  echo $row['order_id']; ?>"><button>	Delete</button>></a></td>
 						</tr>
-					
+
+						
 					<?php	
 						}
 						

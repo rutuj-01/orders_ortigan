@@ -18,7 +18,6 @@ if(isset($_SESSION['email']) && isset($_GET['submit']))
 
 	echo $_SESSION['email'];
 
-	//echo "$produ_name";
 
 	$insQuery="INSERT INTO orders(custID,prod_name,prod_price,quantity,payment_mode,order_status) VALUES('$custID','$prod_name','$prod_price','$prod_quant','$pay_mode','$order_status')";
 
