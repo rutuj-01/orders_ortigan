@@ -45,29 +45,41 @@ if(isset($_SESSION['email']) && isset($_GET['submit']))
 	</title>
 </head>
 <body>
-	<form action="new_order.php" method="get">
-		<label>product name</label>
-		<br>
-		<input type="text" name="prod_name">
-		<br>
-		<label>product price</label>
-		<br>
-		<input type="text" name="prod_price">
-		<br>
-		<label>product quantity</label>
-		<br>
-		<input type="text" name="prod_quant">
-		<br>
-		<label>PAYMENT MOde</label>
-		<br>
-		<input type="text" name="payment_mode">
-		<br>
-		<label>order status</label>
-		<br>
-		<input type="text" name="order_status">
-		<br>
-		<input type="submit" name="submit" value="submit">
-	</form>
+	<div class="container">
+		<form action="new_order.php" method="get">
+			<div class="form-group">
+			<label>product name</label>
+			<br>
+			<input type="text" name="prod_name">
+			</div>
 
+			<div class="form-group">
+			<label>product price</label>
+			<br>
+			<input type="text" name="prod_price">
+			</div>
+			
+			<div class="form-group">
+			<label>product quantity</label>
+			<br>
+			<input type="text" name="prod_quant">
+			</div>
+			<div class="form-group">
+			<label>PAYMENT MOde</label>
+			<br>
+			<input type="text" name="payment_mode">
+			</div>
+			<div class="form-group">
+			<label>order status</label>
+			<br>
+			<input type="text" name="order_status">
+			</div>
+			<input type="submit" name="submit" value="submit">
+		</form>
+	</div>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -51,20 +51,29 @@ if(!isset($_POST['submit'])  || count($err)>0)
 	<title>LOGIN</title>
 </head>
 <body>
+	<div class="container">
 	<h2>LOGIN</h2>
 	<form action="login.php" method="post">
+		<div class="form-group">
 		<label>Email</label>
 		<br>
 		<input type="email" name="email">
+		</div>
+
 		<br>
+
+		<div class="form-group">
 		<label>Password</label>
 		<br>
 		<input type="Password" name="password">
+		</div>
 		<br>
-		<input type="submit" name="submit" value="submit">
+		<input type="submit" name="submit" value="submit" class="btn btn-success">
 	</form>
-
-
+	</div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 

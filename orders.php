@@ -29,24 +29,23 @@ if(isset($_SESSION['email']))
 	<html>
 	<head>
 		<style>
-			table, th, td ,td{
+			/*table, th, td ,td{
 			  border: 1px solid black;
 			  border-collapse: collapse;
-			}
+			}*/
 		</style>
 	</head>
 	<body>
-
-		
+		<div class="container">		
 			<a href="new_order.php"><button >New Order</button></a>
 
 			<a href="logout.php"><button style="margin: 20px;">LOGOUT</button></a>
 		
 		<br>
-		<table>
+		<table class="table table-hover table-dark">
 			<th>
 				<tr>
-					<td>id</td>
+					<td>id</td>	
 					<td>name</td>
 					<td>email</td>
 					<td>pass</td>
@@ -57,6 +56,7 @@ if(isset($_SESSION['email']))
 					<td>quantity</td>
 					<td>payment_mode</td>
 					<td>order_status</td>
+					<td colspan="2">Changes</td>
 
 				</tr>
 			</th>
@@ -66,7 +66,9 @@ if(isset($_SESSION['email']))
 
 						?>
 						<tr>
-						<td><?php   echo $row['id']; ?></td>
+						<td><?php 
+									$_SESSION['ord_id']=$row['order_id'];  
+						 echo $row['id']; ?></td>
  						<td><?php	echo $row['name'];  ?></td>
 						<td><?php	echo $row['email']; ?></td>
 						<td><?php	echo $row['pass']; ?></td>
@@ -78,8 +80,8 @@ if(isset($_SESSION['email']))
 						<td><?php	echo $row['payment_mode']; ?></td>
 						<td><?php	echo $row['order_status']; ?></td>
 
-						<td><a href="update.php?order_id=<?php   echo $row['order_id']; ?>"><button>Update</button>></a></td>
-						<td><a href="delete.php?order_id = <?php  echo $row['order_id']; ?>"><button>	Delete</button>></a></td>
+						<td><a href="update.php?order_id=<?php echo $row['order_id']; ?>"><button>Update</button>></a></td>
+						<td><a href="delete.php?order_id=<?php echo $row['order_id']; ?>"><button>	Delete</button>></a></td>
 						</tr>
 
 						
@@ -92,6 +94,10 @@ if(isset($_SESSION['email']))
 
 
 		</table>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</div>
 	</body>
 	</html>
 
